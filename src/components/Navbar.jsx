@@ -68,7 +68,7 @@ function Navbar() {
                     </a>
                   </Link>
                 </div>
-                {!user?null:( <div className="flex items-center">
+                {!user?null:( <div className="ml-32 flex items-center">
                   
                   <img className="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={user.photo} />
 
@@ -172,6 +172,17 @@ function Navbar() {
                     Discussions
                   </a>
                 </Link>
+                <div >
+                {!user?null:( <div className="flex items-center">
+                  
+                  <img className="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={user.photo} />
+
+                <div className="px-2 text-white font-semibold">{user.name}</div>
+                <button className="px-2 text-white font-semibold border-2 border-black" 
+                onClick={handleLogout}
+                >Logout</button>
+              </div>)}
+                </div>
               </div>
             </div>
           )}
