@@ -129,7 +129,7 @@ function Discussions() {
 										</div>
 									</div>
 								) : (
-									<div className="bg-grey-lighter flex-1 overflow-auto border flex flex-col w-1/3">
+									<div className="bg-grey-lighter flex-1 overflow-auto border flex flex-col w-1/3 my-2">
 										<div className="px-3 flex items-center bg-grey-light cursor-pointer">
 											<div>
 												<img
