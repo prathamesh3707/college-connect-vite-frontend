@@ -165,7 +165,7 @@ function Discussions() {
 							Message text Message text Message text
 						</div> */}
 					</div>
-					<form className="flex flex-row mx-auto justify-center space-x-4">
+					<form className="flex flex-row mx-auto justify-center space-x-4 w-1/3">
 						<input
 							onChange={inputChangeHandler}
 							className="mt-4 border-2 border-slate-500 h-16 sm:w-3/4 rounded-lg p-1 "
