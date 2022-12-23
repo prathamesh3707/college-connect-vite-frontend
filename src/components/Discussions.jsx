@@ -120,7 +120,7 @@ function Discussions() {
 								{/* Left */}
 
 								{user.email === msg.userEmail ? (
-									<div className="flex justify-end my-2  border w-1/3">
+									<div className="flex justify-end my-2  border w-1/3 float-right">
 										<div className="rounded py-2 px-3">
 											<p className="text-sm mt-1">{msg?.message}</p>
 											<p className="text-xs text-grey-darkest text-gray-500">
