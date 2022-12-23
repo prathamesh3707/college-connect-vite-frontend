@@ -120,7 +120,7 @@ function Discussions() {
 								{/* Left */}
 
 								{user.email === msg.userEmail ? (
-									<div className="flex justify-end my-2  border w-1/3 float-right">
+									<div className="flex justify-end my-2  border w-1/3 float-right rounded-md">
 										<div className="rounded py-2 px-3">
 											<p className="text-sm mt-1">{msg?.message}</p>
 											<p className="text-xs text-grey-darkest text-gray-500">
@@ -129,7 +129,7 @@ function Discussions() {
 										</div>
 									</div>
 								) : (
-									<div className="bg-grey-lighter flex-1 overflow-auto border flex flex-col w-1/3 my-2">
+									<div className="bg-grey-lighter flex-1 overflow-auto border flex flex-col w-1/3 my-2 rounded-md">
 										<div className="px-3 flex items-center bg-grey-light cursor-pointer">
 											<div>
 												<img
