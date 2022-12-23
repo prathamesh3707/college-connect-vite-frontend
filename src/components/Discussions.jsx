@@ -97,7 +97,7 @@ function Discussions() {
 	};
 
 	return (
-		<>
+		<div>
 			{!user ? (
 				<div className="bg-dark py-2">
 					<div className="absolute z-10 top-1/2  right-1/2 bg-white rounded-md flex flex-col">
@@ -113,23 +113,45 @@ function Discussions() {
 					/>
 				</div>
 			) : (
-				<div className="bg-dark py-2">
-					<div className="overflow-y-auto sm:mt-4 border-2 rounded-lg border-slate-500 w-5/6 mx-auto h-96 bg-white">
+				<div className="bg-dark py-2 h-screen">
+					<div className="overflow-y-auto sm:mt-4 border-2 rounded-lg border-slate-500 w-5/6 mx-auto h-3/4 bg-blue-300 ">
 						{message?.map((msg) => (
+
 							<div key={msg?._id}>
 								{/* Left */}
 
 								{user.email === msg.userEmail ? (
-									<div className="flex justify-end my-2  border w-1/3 float-right rounded-md">
-										<div className="rounded py-2 px-3">
-											<p className="text-sm mt-1">{msg?.message}</p>
-											<p className="text-xs text-grey-darkest text-gray-500">
-												{moment(msg?.createdAt).startOf("mini").fromNow()}
-											</p>
+									// <div className="bg-white">
+
+                                    // <div className="flex justify-end my-2 border w-1/3 float-right rounded-md bg-green-200 mr-1">
+									// 	<div className="rounded py-2 px-3">
+									// 		<p className="text-sm mt-1">{msg?.message}</p>
+									// 		<p className="text-xs text-grey-darkest text-gray-500">
+									// 			{moment(msg?.createdAt).startOf("mini").fromNow()}
+									// 		</p>
+									// 	</div> 
+								    //  </div> 
+									// </div>
+									<div className=" flex-1 overflow-auto w-full my-2 ">
+										<div className="px-3 flex items-center w-4/5 md:w-2/3 lg:w-1/3 mr-2 float-right bg-green-300 cursor-pointer rounded-md">
+											
+											<div className="ml-4 flex-1 border-b border-grey-lighter py-4">
+											
+												<p className="text-grey-dark mt-1 text-sm">
+													{msg?.message}
+												</p>
+												<div className="flex items-bottom justify-between">
+													<p className="text-xs text-grey-darkest text-gray-500">
+														{moment(msg?.createdAt).startOf("mini").fromNow()}
+													</p>
+												</div>
+											</div>
 										</div>
 									</div>
+
+									
 								) : (
-									<div className="bg-grey-lighter flex-1 overflow-auto border flex flex-col w-1/3 my-2 rounded-md">
+									<div className="bg-white w-4/5 md:w-2/3 lg:w-1/3 flex-1 overflow-auto border flex flex-col w-1/3 my-2 ml-2 rounded-md">
 										<div className="px-3 flex items-center bg-grey-light cursor-pointer">
 											<div>
 												<img
@@ -192,7 +214,7 @@ function Discussions() {
 					</form>
 				</div>
 			)}
-		</>
+		</div>
 	);
 }
 
