@@ -120,7 +120,7 @@ function Discussions() {
 								{/* Left */}
 
 								{user.email === msg.userEmail ? (
-									<div className="flex justify-end mb-2  border ">
+									<div className="flex justify-end my-2  border w-1/3">
 										<div className="rounded py-2 px-3">
 											<p className="text-sm mt-1">{msg?.message}</p>
 											<p className="text-xs text-grey-darkest text-gray-500">
@@ -165,7 +165,7 @@ function Discussions() {
 							Message text Message text Message text
 						</div> */}
 					</div>
-					<form className="flex flex-row mx-auto justify-center space-x-4 w-1/3">
+					<form className="flex flex-row mx-auto justify-center space-x-4 ">
 						<input
 							onChange={inputChangeHandler}
 							className="mt-4 border-2 border-slate-500 h-16 sm:w-3/4 rounded-lg p-1 "
