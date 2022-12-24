@@ -140,7 +140,7 @@ function Discussions() {
 										</div>
 									</div>
 								) : (
-									<div className="bg-white w-4/5 md:w-2/3 lg:w-1/3 flex-1 overflow-auto border flex flex-col w-1/3 my-2 ml-2 rounded-md">
+									<div className="bg-white w-4/5 md:w-2/3 lg:w-1/3 flex-1 overflow-auto border flex flex-col  my-2 ml-2 rounded-md">
 										<div className="px-3 flex items-center bg-grey-light cursor-pointer">
 											<div>
 												<img
