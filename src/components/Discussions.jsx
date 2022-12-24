@@ -125,11 +125,11 @@ function Discussions() {
 				<div className="bg-dark py-2 h-screen">
 					<div className="overflow-y-auto sm:mt-4 border-2 rounded-lg border-slate-500 md:w-5/6 mx-auto h-3/4 bg-blue-300 ">
 						{message?.map((msg) => (
-							<div key={msg?._id} ref={scrollref}>
+							<div key={msg?._id}>
 								{/* Left */}
 
 								{user.email === msg.userEmail ? (
-									<div className=" flex-1 overflow-auto w-full my-2 ">
+									<div className=" flex-1 overflow-auto w-full my-2 "  ref={scrollref}>
 										<div className="px-3 flex items-center w-4/5 md:w-2/3 lg:w-1/3 mr-2 float-right bg-green-300 cursor-pointer rounded-md">
 											<div className="ml-4 flex-1 border-b border-grey-lighter py-4">
 												<p className="text-grey-dark mt-1 text-sm">
@@ -146,7 +146,7 @@ function Discussions() {
 										</div>
 									</div>
 								) : (
-									<div className="bg-white w-4/5 md:w-2/3 lg:w-1/3 flex-1 overflow-auto border flex flex-col w-1/3 my-2 ml-2 rounded-md">
+									<div  ref={scrollref} className="bg-white w-4/5 md:w-2/3 lg:w-1/3 flex-1 overflow-auto border flex flex-col w-1/3 my-2 ml-2 rounded-md">
 										<div className="px-3 flex items-center bg-grey-light cursor-pointer">
 											<div>
 												<img
