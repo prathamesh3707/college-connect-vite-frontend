@@ -28,9 +28,6 @@ function Discussions() {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		scrollref.current?.scrollIntoView();
-	}, [message]);
-	useEffect(() => {
 		axios
 			.get(`${baseUrl}/posts/getmsgs`)
 			.then((res) => {
@@ -102,6 +99,10 @@ function Discussions() {
 		setNewMsg(e.target.value);
 	};
 
+	useEffect(() => {
+		scrollref.current?.scrollIntoView({behavior: "smooth"});
+	}, [message]);
+
 	return (
 		<div>
 			{!user ? (
@@ -128,17 +129,6 @@ function Discussions() {
 								{/* Left */}
 
 								{user.email === msg.userEmail ? (
-									// <div className="bg-white">
-
-									// <div className="flex justify-end my-2 border w-1/3 float-right rounded-md bg-green-200 mr-1">
-									// 	<div className="rounded py-2 px-3">
-									// 		<p className="text-sm mt-1">{msg?.message}</p>
-									// 		<p className="text-xs text-grey-darkest text-gray-500">
-									// 			{moment(msg?.createdAt).startOf("mini").fromNow()}
-									// 		</p>
-									// 	</div>
-									//  </div>
-									// </div>
 									<div className=" flex-1 overflow-auto w-full my-2 ">
 										<div className="px-3 flex items-center w-4/5 md:w-2/3 lg:w-1/3 mr-2 float-right bg-green-300 cursor-pointer rounded-md">
 											<div className="ml-4 flex-1 border-b border-grey-lighter py-4">
@@ -147,7 +137,9 @@ function Discussions() {
 												</p>
 												<div className="flex items-bottom justify-between">
 													<p className="text-xs text-grey-darkest text-gray-500">
-														{moment(msg?.createdAt).startOf("mini").fromNow()}
+														{moment(msg?.createdAt)
+															.startOf("mini")
+															.fromNow(true)}
 													</p>
 												</div>
 											</div>
@@ -173,15 +165,15 @@ function Discussions() {
 												</p>
 												<div className="flex items-bottom justify-between">
 													<p className="text-xs text-grey-darkest text-gray-500">
-														{moment(msg?.createdAt).startOf("mini").fromNow()}
+														{moment(msg?.createdAt)
+															.startOf("mini")
+															.fromNow(true)}
 													</p>
 												</div>
 											</div>
 										</div>
 									</div>
 								)}
-
-								{/* Right */}
 							</div>
 						))}
 					</div>
