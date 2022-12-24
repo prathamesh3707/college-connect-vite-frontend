@@ -101,7 +101,7 @@ function Discussions() {
 
 	useEffect(() => {
 		scrollref.current?.scrollIntoView({ behavior: "smooth" });
-	}, [message]);
+	}, [newMsg]);
 
 	return (
 		<div>
