@@ -2,7 +2,7 @@
 import React from "react";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import chatImg from "../assets/chat.webp";
 import moment from "moment";
 
@@ -15,8 +15,6 @@ function Discussions() {
 	// const sendMessage=()=>{
 
 	// }
-
-	const scrollref = useRef(null);
 
 	const [user, setUser] = useState(
 		JSON.parse(localStorage.getItem("UserToken"))
@@ -99,10 +97,6 @@ function Discussions() {
 		setNewMsg(e.target.value);
 	};
 
-	useEffect(() => {
-		scrollref.current?.scrollIntoView({ behavior: "smooth" });
-	}, [newMsg]);
-
 	return (
 		<div>
 			{!user ? (
@@ -122,7 +116,7 @@ function Discussions() {
 					/>
 				</div>
 			) : (
-				<div className="bg-dark py-2 ">
+				<div className="bg-dark py-2 h-screen">
 					<div className="overflow-y-auto sm:mt-4 border-2 rounded-lg border-slate-500 md:w-5/6 mx-auto h-3/4 bg-blue-300 ">
 						{message?.map((msg) => (
 							<div key={msg?._id}>
@@ -130,10 +124,7 @@ function Discussions() {
 
 								{user.email === msg.userEmail ? (
 									<div className=" flex-1 overflow-auto w-full my-2 ">
-										<div
-											ref={scrollref}
-											className="px-3 flex items-center w-4/5 md:w-2/3 lg:w-1/3 mr-2 float-right bg-green-300 cursor-pointer rounded-md"
-										>
+										<div className="px-3 flex items-center w-4/5 md:w-2/3 lg:w-1/3 mr-2 float-right bg-green-300 cursor-pointer rounded-md">
 											<div className="ml-4 flex-1 border-b border-grey-lighter py-4">
 												<p className="text-grey-dark mt-1 text-sm">
 													{msg?.message}
@@ -150,10 +141,7 @@ function Discussions() {
 									</div>
 								) : (
 									<div className="bg-white w-4/5 md:w-2/3 lg:w-1/3 flex-1 overflow-auto border flex flex-col w-1/3 my-2 ml-2 rounded-md">
-										<div
-											ref={scrollref}
-											className="px-3 flex items-center bg-grey-light cursor-pointer"
-										>
+										<div className="px-3 flex items-center bg-grey-light cursor-pointer">
 											<div>
 												<img
 													className="h-12 w-12 rounded-full"
