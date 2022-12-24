@@ -146,7 +146,7 @@ function Navbar() {
 					{(ref) => (
 						<div className="md:hidden" id="mobile-menu">
 							<div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-								<Link to="/home">
+								<Link to="/">
 									<a
 										href="#"
 										className="hover:bg-blue-400 text-white block px-3 py-2 rounded-md text-base font-medium"
